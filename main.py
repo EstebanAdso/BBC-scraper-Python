@@ -41,6 +41,6 @@ if __name__ == "__main__":
     results = run_pipeline()
     
     if results:
-        print("\n🎉 Pipeline executed successfully!")
+        print("\nPipeline executed successfully!")
         print(f"CSV file generated: {results.get('csv_file', 'N/A')}")
         print(f"Database records: {len(results['db_content'])}")
