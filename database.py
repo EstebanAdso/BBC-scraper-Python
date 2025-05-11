@@ -85,7 +85,7 @@ class DatabaseManager:
             print("No hay artículos en la base de datos")
             return
             
-        print("\n📄 Contenido completo de la base de datos:")
+        print("\nContenido completo de la base de datos:")
         print("-" * 100)
         print(f"| {'ID':<4} | {'Fecha':<10} | {'Título':<40} | {'Resumen':<40} |")
         print("-" * 100)
