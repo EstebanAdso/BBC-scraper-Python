@@ -38,3 +38,15 @@ Cada vez que se hace un push, pull request o ejecución manual del workflow, Git
 - Instala las dependencias.
 - Ejecuta el scraping.
 - Sube los archivos generados como artifacts descargables.
+
+---
+
+## Nota importante sobre archivos generados
+
+Los archivos generados (CSV y base de datos) **no aparecen en la vista de archivos del repositorio** ya que están incluidos en el `.gitignore`. Sin embargo, **sí se generan y se pueden descargar como artifacts** desde la pestaña **Actions** de GitHub en cada ejecución del workflow.
+
+### ¿Cómo ver y descargar los archivos generados?
+1. Ve a la pestaña **Actions** de este repositorio en GitHub.
+2. Haz clic en la ejecución más reciente del workflow ("Generate CSV and DB Artifacts with GitHub Actions").
+3. Al final de la página, en la sección **Artifacts**, encontrarás un archivo ZIP llamado `archivos-generados` que contiene los archivos generados.
+

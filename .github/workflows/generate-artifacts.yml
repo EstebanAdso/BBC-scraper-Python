@@ -1,4 +1,4 @@
-name: Generate CSV and DB Artifacts
+name: Generate CSV and DB Artifacts with GitHub Actions
 
 on:
   push:
@@ -28,10 +28,11 @@ jobs:
         run: |
           python main.py
 
-      - name: Upload artifacts (CSV and DB)
-        uses: actions/upload-artifact@v4
+      - name: Commit y push archivos generados
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          name: archivos-generados
-          path: |
-            ArchivosGenerados/*.csv
-            ArchivosGenerados/*.db
+          commit_message: 'Genera archivos CSV y base de datos desde workflow'
+          commit_user_name: GitHub Actions
+          commit_user_email: actions@github.com
+          commit_author: GitHub Actions <actions@github.com>
+          file_pattern: ArchivosGenerados/*.csv ArchivosGenerados/*.db
