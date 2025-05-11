@@ -59,7 +59,7 @@ class DatabaseManager:
                         nuevos += 1
                 
                 conn.commit()
-                print(f"✅ Data stored in SQLite ({self.DB_NAME}.{self.TABLE_NAME})")
+                print(f"Data stored in SQLite ({self.DB_NAME}.{self.TABLE_NAME})")
                 print(f"Total records inserted: {nuevos}")
                 
         except Error as e:
