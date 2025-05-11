@@ -1,0 +1,47 @@
+name: accionables
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Paso 1 - Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Paso 2 - Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Paso 3 - crea entorno virtual
+        run: python -m venv venv
+
+      - name: Paso 4 - activar entorno virtual y actualizar pip
+        run: |
+          .\venv\Scripts\activate
+          python -m pip install --upgrade pip
+
+      - name: Paso 5 - instalar dependencias
+        run: |
+          .\venv\Scripts\activate
+          pip install -r requirements.txt
+
+      - name: Paso 6 - Ejecutar Main
+        run: |
+          .\venv\Scripts\activate
+          python main.py
+
+      - name: Paso 7 - Guardar el commit con el ultimo cambio desde pipeline
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Genera archivos CSV y base de datos desde workflow'
+          commit_user_name: GitHub Actions
+          commit_user_email: estebanadso@github.com
+          commit_author: Esteban Trujillo <estebanadso@github.com>
+          file_pattern: ArchivosGenerados/*.csv ArchivosGenerados/*.db
+
