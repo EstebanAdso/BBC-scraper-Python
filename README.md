@@ -37,10 +37,7 @@ Este proyecto realiza el scraping de artículos de la sección de tecnología de
 Cada vez que se hace un push, pull request o ejecución manual del workflow, GitHub Actions:
 - Instala las dependencias.
 - Ejecuta el scraping.
-- Sube los archivos generados como artifacts descargables.
+- crea un commit nuevo en nuestro repositorio.
 
 ---
 
-## Nota importante sobre archivos generados
-
-Los archivos generados (CSV y base de datos) **no aparecen en la vista de archivos del repositorio** ya que están incluidos en el `.gitignore`. Sin embargo, **sí se generan y se pueden descargar como artifacts** desde la pestaña **Actions** de GitHub en cada ejecución del workflow.
