@@ -24,7 +24,7 @@ Este proyecto realiza el scraping de artículos de la sección de tecnología de
 
 1. Instala las dependencias:
    ```
-   pip install -r requirements.txt
+   pip install -r requirements.txt.
    ```
 2. Ejecuta el pipeline:
    ```
