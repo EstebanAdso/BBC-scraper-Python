@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Paso 1 - Checkout Repositorio
         uses: actions/checkout@v4
